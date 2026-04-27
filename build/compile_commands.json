@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Users/Daniel Shin/Documents/RBP_CPD/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe -I\"C:/Users/Daniel Shin/Documents/RBP_CPD/include\" -isystem C:/msys64/ucrt64/include/eigen3 -g -std=gnu++20 -o CMakeFiles\\rbp_cpd.dir\\src\\main.cpp.obj -c \"C:\\Users\\Daniel Shin\\Documents\\RBP_CPD\\src\\main.cpp\"",
-  "file": "C:/Users/Daniel Shin/Documents/RBP_CPD/src/main.cpp",
-  "output": "C:/Users/Daniel Shin/Documents/RBP_CPD/build/CMakeFiles/rbp_cpd.dir/src/main.cpp.obj"
-}
-]

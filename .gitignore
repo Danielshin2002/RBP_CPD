@@ -2,10 +2,31 @@ todo.txt
 specs.md
 
 
-
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
+
+# Virtual environments
+
+.venv/
 venv/
+
+
+# Build directories
+build/
+cmake-build-*/
+
+# CMAKE
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.obj
