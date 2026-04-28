@@ -25,10 +25,8 @@ Operational definitions:
 
 # Data
 
-The data frequency that we will use is monthly data.
-Our target variables consiste of 
-
-21-day (1 month) forward realized volatility
+The prediction frequency that we will use is monthly data.
+Similar to the paper, we will obtain daily oberservations for outcomes and predictive variablers from January 1986 to November 1999. December 1999 is left to be predicted. Then we will move forward in 1 month intervals, to predict January-December of each year, then recalibrate the RBP every year until the final prediction is made on March 2026, which will be the complete month as of this repo.
 
 ## Predictors
 The predictors we will use are quite similar to the ones in the paper, with a few additions. 
