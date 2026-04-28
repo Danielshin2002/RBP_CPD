@@ -1,6 +1,6 @@
 todo.txt
 specs.md
-
+*.env
 
 # Python
 __pycache__/
