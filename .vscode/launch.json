@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run rbp_cpd",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/rbp_cpd",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: g++.exe build active file"
+        }
+    ]
+}

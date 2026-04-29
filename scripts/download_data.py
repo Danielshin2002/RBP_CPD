@@ -39,6 +39,9 @@ Vol_Ratio = SPX_7d_vol/SPX_63d_vol
 IV_RV = VIX - SPX_21d_vol
 Curve_10y1m = T_10Y['DGS10'] - T_3M['DGS3MO']
 
+#Target Variable
+SPX_21d_vol_fw = SPX_21d_vol.shift(-21)
+
 #Macro Variables
 Growth = Growth.set_axis(pd.to_datetime(Growth.index)).sort_index().shift(1).resample('D').ffill().reindex(SPX.index, method = 'ffill')
 Inflation = Growth.set_axis(pd.to_datetime(Growth.index)).sort_index().shift(1).resample('D').ffill().reindex(SPX.index, method = 'ffill')
@@ -47,6 +50,7 @@ M2 = Growth.set_axis(pd.to_datetime(Growth.index)).sort_index().shift(1).resampl
 
 # Join
 keys = [
+    'SPX_21d_vol_fw',
     'SPX',
     'VIX',
     'T_3M',
@@ -67,7 +71,7 @@ keys = [
     '10y1m'
 ]
 df = pd.concat(
-    [SPX, VIX, T_3M, T_10Y, CS, Growth, Inflation, PR, M2, SPX_7d_vol, SPX_21d_vol, SPX_63d_vol, SPX_7d_ret, SPX_21d_ret,SPX_63d_ret, Vol_Ratio, IV_RV, Curve_10y1m], 
+    [SPX_21d_vol_fw, SPX, VIX, T_3M, T_10Y, CS, Growth, Inflation, PR, M2, SPX_7d_vol, SPX_21d_vol, SPX_63d_vol, SPX_7d_ret, SPX_21d_ret,SPX_63d_ret, Vol_Ratio, IV_RV, Curve_10y1m], 
     keys = keys, axis = 1)
 df.columns = df.columns.droplevel(1)
 
@@ -75,8 +79,6 @@ df.columns = df.columns.droplevel(1)
 # Filter Index - Ignore first 3 months due to 63 trailing, and ignore last 3 months for same reason.
 df.index = pd.to_datetime(df.index)
 df = df[(df.index > '1990-04-01') & (df.index < '2026-01-01')].dropna()
-
-
 
 # Check for NA's
 df.isna().sum()
